@@ -142,6 +142,8 @@ section.band{padding-block:76px}
 .area h3{font-size:18px;font-weight:600}
 .area p{color:var(--muted);font-size:15px}
 .area .ref{font-size:12.5px;color:var(--gold-ink);font-weight:500}
+a.area-more{text-decoration:none;color:inherit;background:var(--card)}
+a.area-more:hover h3{color:var(--gold-ink)}
 @media (max-width:760px){.areas{grid-template-columns:1fr}}
 
 /* annual retainer */
@@ -240,6 +242,7 @@ html[lang="en"] .ch{grid-template-columns:9.5em 1fr auto}
 .ch dd .ltr{font-weight:500;font-size:15.5px}
 .copy{background:none;border:1px solid var(--line);color:var(--muted);font:500 12.5px var(--f);padding:4px 10px;border-radius:3px;cursor:pointer}
 .copy:hover{border-color:var(--gold-ink);color:var(--gold-ink)}
+a.copy{text-decoration:none;display:inline-block;line-height:1.5}
 form{display:grid;gap:14px;background:var(--paper);border:1px solid var(--line);padding:26px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .row > *{min-width:0}
@@ -370,7 +373,7 @@ html[lang="en"] .wa{left:auto;right:calc(18px + env(safe-area-inset-right,0px))}
       </div>
       <ul class="foot-strip">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 7 7L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span class="ltr">0570691310</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>الرياض – شارع العليا</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>الرياض – طريق الملك فهد، العليا</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>الأحد – الخميس، <span class="ltr">9:00</span> ص – <span class="ltr">5:00</span> م</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg><span class="ltr">alsayyal.com</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="ltr">info@alsayyal.com</span></li>
@@ -399,7 +402,7 @@ html[lang="en"] .wa{left:auto;right:calc(18px + env(safe-area-inset-right,0px))}
     btn.addEventListener('click',function(){var o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
     links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
   }
-  document.querySelectorAll('.copy').forEach(function(b){
+  document.querySelectorAll('.copy[data-copy]').forEach(function(b){
     b.addEventListener('click',function(){
       var t=b.getAttribute('data-copy');
       function done(){b.textContent=T.copied;setTimeout(function(){b.textContent=T.copy},1600)}
